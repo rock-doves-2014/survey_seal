@@ -5,7 +5,7 @@ get '/survey/:id' do |id|
   @questions.each do |question|
      @answers[question.id]= question.answers
   end
-    erb :"/surveys/#{id}", locals {survey: @survey, answers: @answers, questions: @questions }
+    erb :"/surveys/#{id}", locals: {survey: @survey, answers: @answers, questions: @questions }
 end
 
 get '/survey/new' do
@@ -21,7 +21,7 @@ end
 
 get '/survey/:id/edit' do |id|
   @survey = Survey.find_by('id = ?', id)
-  erb :"/surveys/#{id}/edit", locals {survey: @survey}
+  erb :"/surveys/#{id}/edit", locals: {survey: @survey}
 end
 
 put '/survey/:id/edit' do |id|
