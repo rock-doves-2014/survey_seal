@@ -5,7 +5,7 @@ get '/survey/:id' do |id|
   @questions.each do |question|
      @answers[question.id]= question.answers
   end
-    erb :"/surveys/#{id}", locals: {survey: @survey, answers: @answers, questions: @questions }
+    erb :"/surveys/single", locals: {survey: @survey, answers: @answers, questions: @questions }
 end
 
 get '/survey/new' do

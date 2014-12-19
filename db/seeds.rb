@@ -1,6 +1,6 @@
-users = [{name: 'peter', email: 'peter.jahnes@gmail.com', password_digest: 123},
-	{name: 'carl', email: 'carl.schubert@gmail.com', password_digest: 123},
-	{name: 'ashley', email: 'ashley.baldwinhunter@gmail.com', password_digest: 123},]
+users = [{name: 'peter', email: 'peter.jahnes@gmail.com', password: 123},
+	{name: 'carl', email: 'carl.schubert@gmail.com', password: 123},
+	{name: 'ashley', email: 'ashley.baldwinhunter@gmail.com', password: 123},]
 
 users.each do |user|
 	User.create(user)

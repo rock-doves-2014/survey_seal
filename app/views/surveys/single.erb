@@ -1,0 +1,8 @@
+<div>
+  <%= @survey.title %><br>
+  <% @questions.each do |question| %>
+  <%= question.question %><br>
+  <%= @answers[question.id] %><br>
+
+  <% end %>
+</div>
