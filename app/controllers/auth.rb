@@ -8,7 +8,7 @@ end
 
 get '/logout' do
   session[:user_id] = nil
-  redirect '/categories'
+  redirect '/'
 end
 
 post '/login' do
@@ -16,14 +16,19 @@ post '/login' do
 
   if user && user.authenticate(params[:user][:password])
     session[:user_id] = user.id
-    redirect '/categories'
+    redirect '/'
   else
-    redirect '/login'
+    #errors
+    erb :"/auth/login", locals: {user_data: params[:user]}
   end
 end
 
 post '/signup' do
-  params[:user][:admin] = false
-  User.create(params[:user])
-  redirect '/categories'
+  user = User.new(params[:user])
+  if user.save
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    erb :"/auth/signup", locals: {user_data: params[:user]}
+  end
 end

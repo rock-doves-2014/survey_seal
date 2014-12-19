@@ -1,5 +1,53 @@
+header {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 120px;
+	width: 100%;
+	background-color: green;
+	}
+
+#seal {
+	height: 96px;
+	width: 128px;
+	float: left;
+	}
+
+nav {
+	height: 40px;
+	width: 700px;
+	float: right;
+	}
+
+nav ul {
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	}
 
 
-#inhale {
- display: none
+nav ul li {
+	position: relative;
+	float: left;
+	list-style-type: none;
+	margin: 5px;
+	padding: 2px;
+	height: 30px;
+	width: 100px;
+	text-align: center;
+	line-height: 35px;
+	}
+
+.container {
+  width: 100%;
+	margin-top: 120px;
+	margin-bottom: 60px;
 }
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	height: 60px;
+	width: 100%;
+	background-color: green;
