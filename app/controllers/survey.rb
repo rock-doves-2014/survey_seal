@@ -12,7 +12,7 @@ get '/survey/new' do
   erb :"surveys/new"
 end
 
-post '/survey/new'
+post '/survey/new' do
   survey = Survey.new(params[:survey])
   survey.user_id = current_user.id
   survey.save
