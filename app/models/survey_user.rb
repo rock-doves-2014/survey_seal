@@ -1,3 +1,4 @@
 class SurveyUser < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :user
+  belongs_to :completed_surveys, class_name: "Survey", foreign_key: :survey_id
 end
