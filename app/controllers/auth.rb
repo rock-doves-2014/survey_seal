@@ -18,11 +18,17 @@ post '/login' do
     session[:user_id] = user.id
     redirect '/'
   else
-    redirect '/login'
+    #errors
+    erb :"/auth/login", locals: {user_data: params[:user]}
   end
 end
 
 post '/signup' do
-  User.create(params[:user])
-  redirect '/'
+  user = User.new(params[:user])
+  if user.save
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    erb :"/auth/signup", locals: {user_data: params[:user]}
+  end
 end
