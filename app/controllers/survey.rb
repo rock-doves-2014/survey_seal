@@ -1,7 +1,7 @@
 get '/survey/:id' do |id|
   @survey = Survey.find_by('id = ?', id)
   @questions = @survey.questions
-  @answers = {}
+  @answers = Hash.new
   @questions.each do |question|
      @answers[question.id]= question.answers
   end
