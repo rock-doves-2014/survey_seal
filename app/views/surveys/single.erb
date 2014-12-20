@@ -5,14 +5,14 @@
   <% @questions.each_with_index do |question, index| %>
     <br>
     <%= "#{index+1}. #{question.question}" %>
-      <form action = "/questions/new" method = "POST">
+      <form action = "/user_answers" method = "POST">
     <br>
     <% @answers[question.id].each do |answer|%>
-      <input type="radio" name="params[answer<%= index %>]" value="<%= answer.id %>"> <%=answer.answer%><br>
+      <input type="radio" name="answers[answer<%= index %>]" value="<%= answer.id %>"> <%=answer.answer%><br>
       <br>
     <%end%>
 
   <% end %>
-    <input type = "submit" value = "Submit Survey">
+    <input type= "submit" value= "Submit Survey">
   </form>
 </div>
